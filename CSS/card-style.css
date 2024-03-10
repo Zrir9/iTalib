@@ -1,0 +1,272 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #4c4c4c;
+    background-color: white;
+	width: 90%;
+	margin: 0 auto;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	font-size: 1rem;
+    line-height: 1.375;
+}
+.main-area{
+
+}
+.menu{
+	
+}
+.menu-section .centered {	
+	position : absolute;
+	width: 90%;
+	margin: 0;
+	padding : 0;
+}
+.centered nav{
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+	margin : 0 auto;
+	padding: 40px 40px;
+	-webkit-text-size-adjust: 100%;
+    vertical-align: baseline;
+    background-color : white;
+	z-index : 999;
+	top : 0;
+	left : 0;
+	overflow : hidden;
+	width : 90%;
+	border-top: 3px solid #2ea3f2;
+
+}
+
+.menu-section {
+	margin : 0;
+	padding: 0;
+	border-bottom: 1px solid hsl(0, 0%, );
+	
+	/*
+	-webkit-text-size-adjust: 100%;
+    vertical-align: baseline;
+    background: transparent;
+	-webkit-box-shadow: 0px 0px 11px -5px rgba(0,0,0,0.94); 
+	box-shadow: 0px 0px 11px -5px rgba(0,0,0,0.94);
+	*/
+}
+
+.menu ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	background: white;
+	font-weight: 600;
+}
+
+.menu li a {
+	display: block;
+	text-decoration: none;
+	font-size : .9rem ;
+	font-family : Roboto Mono;
+	color: black;
+	border-bottom: 1px solid rgba(0,0,0,.03);
+    color: #666;
+    padding: 10px 5%;
+	
+	
+}
+.menu li{
+	line-height : 1rem;
+}
+.menu li a:hover {
+	background-color : #F0EBE3;
+
+}
+.active {
+
+}
+
+#logo{
+	height:100%;
+	max-height: 54%;
+	width : 90px;
+	position: relative;
+	
+}
+img{
+	max-width:100%;
+	max-height:100%;
+	height : auto;
+}
+.logo-container{
+	margin:0 auto;
+	padding: 0 3.2em;
+    height: 100%;
+    width: 100%;
+	display : flex;
+	justify-content : space-between;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+}
+
+a{
+	text-decoration : none;
+}
+.hamburger{
+	color : black;
+	margin-top: 40px ;
+	font-size : 120%;
+}
+.cards {
+	
+}
+.card {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+	margin-bottom: 2em;	
+}
+
+.card a {
+	color: black;
+	text-decoration: none;
+}
+
+.card a:hover {
+	box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+.card-content {
+	padding: 1.4em;
+}
+
+.card-content h2 {
+	font-family: 'Space Mono', monospace;
+	margin-top: 0;
+	margin-bottom: .5em;
+	font-weight: normal;
+}
+
+.card-content p {
+	font-family : Roboto Mono;
+	font-size: 80%;
+	display : flex;
+	
+}
+.thumbnail img{
+	width : 100%;
+	height : auto;
+}
+.thumbnail{
+
+	display : flex;
+	justify-content : left;
+}
+.main-area .centered{
+		margin : 40px auto;
+		width : 90%;
+}
+
+#cardText {
+}	
+#nav1 ul{
+		display : flex;
+		flex-direction : row;
+		padding : 10px 20px;
+}
+#nav1 ul a{
+	padding : 10px;
+	margin : 10px;
+	margin-top : 20px;
+}
+#nav1 a{
+	background-color : transparent;
+	border : 0;
+}
+#nav1 a:hover{
+	color : black;
+}
+#nav1 {
+	display : none;
+	justify-content : space-between;
+	margin : 0;
+	margin-right : -40px;
+}
+
+.slidesCountainer{
+	margin : 0 auto;
+	width : 90%;
+	max-width : 900px;
+}
+.slideShow-countainer {
+	display : flex;
+	align-items : center;
+}
+.div1, .div2, .div3{
+	height : auto;
+	width : 100%;
+	margin : 30px 0;
+	padding : 0;
+	border : 1px solid black;
+	display : flex;
+	justify-content : center;
+}
+
+.mySlides img{
+	width : 120%;
+}	
+
+#prev, #next{
+	cursor : pointer;
+	width : auto;
+	margin : 0;
+	padding : 20px 10px;
+	font-size : 30px;
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+#prev:hover, #next:hover{
+	box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+
+}
+
+h2 {
+		font-family: 'Space Mono', monospace;
+}
+@media screen and (min-width : 60em){
+	.cards {
+		display : flex;
+		flex-direction : row;
+		flex-wrap : wrap;
+		justify-content : space-between;
+
+}
+	.card{
+		display : flex;
+		flex-direction : row;
+		/*flex : 0 1 calc(33% - 1em);*/
+		width : calc(30% - .5em);
+		margin-bottom : 1em;
+	}	
+	#nav1 {
+		display : none;
+	}
+		.hamburger{
+		display : block;
+	
+}
+}	
+.main-area .centered{
+}
+
+@media screen and (min-width : 80em){
+	.card{
+		/*flex : 0 1 calc(33% - 1em);*/
+		width : calc(25% - .5em);
+		display : flex;
+		flex-direction : row;
+	}
+	.hamburger{
+		display : none;
+	
+}
+	#nav1 {
+		display : flex;
+	}
+}
+

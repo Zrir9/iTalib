@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    <title>IStudent</title>
+    <meta name="description" content="Flexible box card-based layout demo from Morten Rand-Hendriksen, staff author at lynda.com"/>
+                
+    <link rel="stylesheet" href="stylish.css" type="text/css" media="all">
+	<link href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css 
+	  rel="stylesheet"  type='text/css'>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Secular+One&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<script
+	  src="https://code.jquery.com/jquery-3.6.0.js"
+	  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	  crossorigin="anonymous">
+	 </script>
+
+
+</head>
+
+<body>
+	
+	<header class="masthead clear">
+    </header>
+	
+		
+			<section class= "menu-section">
+					<div class ="logo-container">
+						<img src="coin.png" id = "logo"></img>
+						<a class = "hamburger" href= "#!" aria-label = "Open main menu">
+								<i class="fa-solid fa-bars" aria-hidden="true"></i>
+								<span class= "sr-only">Open main menu</span>
+						</a>
+						<nav id = "nav1" class= "nav menu" role = "navigation">
+								<ul>
+									<li><a href="#" >Acceuil</a></li>
+									<li><a href="#">Chercher Travail</a></li>
+									<li><a href="#">Chercher Cv</a></li>
+									<li><a href="#">Compte</a></li>
+							   </ul>
+						</nav>
+					</div>
+					<div class= "centered">
+							<nav id = "nav" class= "nav menu" role = "navigation">
+								<ul>
+									<li><a href="#" class='active' >Acceuil</a></li>
+									<li><a href="#">Chercher Travail</a></li>
+									<li><a href="#">Chercher Cv</a></li>
+									<li><a href="#">Se Connecter</a></li>
+									<li><a href="#">Compte</a></li>
+							   </ul>
+							</nav>
+					</div>
+				
+			</section>
+			
+		<main class="main-area">
+		 <!--<div class = "slidesCountainer">
+				<div class = "slideShow-countainer">
+										<i class="fa-solid fa-chevron-left" id = "prev"></i>
+
+					<div class="mySlides div1"><img src="famous.jpg"></img></div>
+					<div class="mySlides div2"><img src="rock.jpg"></div>
+					<div class="mySlides div3"><img src="lghiwan.jpg"></div>
+				
+						<i class="fa-solid fa-chevron-right" id = "next"></i>
+				</div>
+			</div>-->
+			<div class="filter-container">
+    <!-- Example of a dropdown filter for job type -->
+    <select id="jobType" name="jobType">
+        <option value="all">All Job Types</option>
+        <option value="fulltime">Full-time</option>
+        <option value="parttime">Part-time</option>
+        <option value="remote">Remote</option>
+    </select>
+    <!-- Add more filters as needed -->
+</div>
+
+        <div class="centered">
+				<h2>Articles</h2>
+            <section class="cards">
+                
+                <article class="card">
+    <a href="#">
+        <figure class="thumbnail"><img src="logo-entreprise.jpg" alt="Logo de l'entreprise"></figure>
+        <div class="card-content">
+            <h2>Développeur Web Full Stack</h2>
+            <ul class="job-details">
+                <li><strong>Expérience :</strong> 3 ans minimum</li>
+                <li><strong>Type de contrat :</strong> CDI</li>
+                <li><strong>Compétences :</strong> JavaScript, HTML, CSS, React/Angular, Node.js/PHP</li>
+                <li><strong>Lieu :</strong> Paris, France</li>
+            </ul>
+            <p class="apply-instructions">Envoyez CV et lettre de motivation à contact@entreprise.fr</p>
+        </div>
+    </a>
+</article>
+
+
+                <article class="card">
+                    <a href="#">
+                        <figure class="thumbnail"><img src ="red.jpg"></img>
+                        </figure>
+                        <div class="card-content">
+                            <h2 id = "cardHeader">5 NFT projects to watch</h2>
+                            <p id = "cardText">What are the best upcoming NFT projects this year? Lets explore their features and highlight the investment potential that these may have..</p>
+                        </div><!-- .card-content -->
+                    </a>
+                </article><!-- .card -->
+
+                <article class="card">
+                    <a href="#">
+                        <figure class="thumbnail"><img src ="ether.jpg"></img>
+                        </figure>
+                        <div class="card-content">
+                            <h2 id = "cardHeader">Top 10 Crypto in 2022</h2>
+                            <p id = "cardText">There are more than a thousand cryptocurrencies in the market to make you feel spoilt for choice. So, how can you make a smart decision?...</p>
+                        </div><!-- .card-content -->
+                    </a>
+                </article><!-- .card -->
+
+                <article class="card">
+                    <a href="#">
+                        <figure class="thumbnail"><img src ="goat.jpg"></img>
+                        </figure>
+                        <div class="card-content">
+                            <h2 id = "cardHeader">8 Best DeFi Apps to Try in 2022</h2>
+                            <p id = "cardText">Decentralized finance (DeFi) apps give you access to a range of crypto-centric services in the palm of your hand. This includes everything from crypto loans and interest accounts to yield farming and staking..</p>
+                        </div><!-- .card-content -->
+                    </a>
+                </article><!-- .card -->
+
+                <article class="card">
+                    <a href="#">
+                        <figure class="thumbnail"><img src ="bitcoin-news.jpg"></img>
+                        </figure>
+                        <div class="card-content">
+                            <h2 id = "cardHeader">Best Crypto Exchanges</h2>
+                            <p id = "cardText">If you want to buy or sell cryptocurrencies, opening an account with a cryptocurrency exchange is a great way to start..</p>
+                        </div><!-- .card-content -->
+                    </a>
+                </article><!-- .card -->
+
+                
+
+            </section><!-- .cards -->
+        </div><!-- .centered -->
+			
+			
+		
+	</main>
+					
+			
+	
+	
+	
+	
+	<script src = "new 1.js"></script>
+</body>

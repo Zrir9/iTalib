@@ -1,0 +1,69 @@
+.btn {
+  position: relative;
+  width: 120px;
+  margin: auto;
+  height: 45px;
+  border: none;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 6px;
+  cursor: pointer;
+  background: none;
+  color: aliceblue;
+}
+
+#previous {
+  background-image: url(/public/images/v6/arrows.png);
+  width: 23px;
+  height: 36px;
+}
+/* .containerfiltersforms {
+  width: 190vh;
+  padding: 1rem;
+   height: 100vh; 
+
+  display: grid; 
+   grid-template-columns: repeat(5, 1fr); 
+   gap: 1rem;
+} */
+.filters-body {
+  font-family: cursive;
+  font-size: 1rem;
+
+  /* background-color: #f1fbff; */
+  width: 250px;
+  padding: 25px 20px;
+}
+
+.filters-options {
+  padding: 0 0px;
+  margin-right: 28px;
+  margin-top: 200px;
+  background-color: aquamarine;
+  grid-column: 5/6;
+  grid-row: 1/3;
+}
+.formdiv {
+  background-image: none;
+  height: auto;
+  /* background-color: #f1fbff; */
+  padding: 12px 0 18px 0;
+  width: 100%;
+  height: 20%;
+  text-align: center;
+  margin-top: 18px;
+
+  grid-column: 1/5;
+  grid-row: 1/3;
+}
+.serchinput {
+  width: 492px;
+  height: 35px;
+  border-radius: 13px;
+}
+.field {
+  grid-column: 1/4;
+  background-color: azure;
+}
