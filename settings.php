@@ -7,57 +7,55 @@
 
 	error_reporting(0);
   	include 'config.php';		
-  	if ($_SERVER["REQUEST_METHOD"] == "GET"){ 
-  		if (!empty($_GET['full_name']) && $_GET['full_name'] != $_SESSION['name'] ){
-  			$full_name = $_GET['full_name'];
-  			$full_name = filter_var($full_name, FILTER_SANITIZE_STRING);
-  			$query = "update user set name='".$full_name."' where id=".$_SESSION['login_user'];
-  		}
 
-  		else if (!empty($_GET['user_name']) && $_GET['user_name'] != $_SESSION['user_name']){
-  			$user_name = $_GET['user_name'];
-  			$user_name = filter_var($user_name, FILTER_SANITIZE_STRING);
-  			$query = "update user set user_name='".$user_name."' where id=".$_SESSION['login_user'];
-  		}
-
-  		else if (!empty($_GET['contact']) && $_GET['contact'] != $_SESSION['contact']){
-  			$contact = $_GET['contact'];
-  			$query = "update user set contact_no='".$contact."' where id=".$_SESSION['login_user'];
-  		}
-
-  		else if (!empty($_GET['email']) && $_GET['email'] != $_SESSION['email_id']){
-  			$email = $_GET['email'];
-  			if(filter_var($email, FILTER_VALIDATE_EMAIL) === FALSE) {
-    			throw new Exception("Invalid Email");
-  			}
-  			$query = "update user set email_id='".$email."' where id=".$_SESSION['login_user'];
-  		}
-		
-		else if (!empty($_GET['password'])){
- 			$password = $_GET['password'];
-  			$query = "update user set password='".$password."' where id=".$_SESSION['login_user'];
-  		}
-
-		else if (!empty($_GET['dp_url']) && $_GET['dp_url'] != $_SESSION['dp_url']){
-			$dp_url = $_GET['dp_url'];
-			$imgExts = array("gif", "jpg", "jpeg", "png", "tiff", "tif");
-			$urlExt = pathinfo($dp_url, PATHINFO_EXTENSION);
-			if (in_array($urlExt, $imgExts)) {
-    			$query = "update user set img_url='".$dp_url."' where id=".$_SESSION['login_user'];	
-			}
-			else{
-				echo "<script>alert('URL is not of an image.')</script>";
-			}
-			
-		}  		
-  		if (mysqli_query($connection, $query)) { 
-       		$_SESSION['name'] = $_GET['full_name'];
-    		$_SESSION['user_name'] = $_GET['user_name'];
-    		$_SESSION['email_id'] = $_GET['email'];
-    		$_SESSION['contact'] = $_GET['contact'];
-    		$_SESSION['dp_url'] = $_GET['dp_url'];
-		} 
-  	}
+	  if ($_SERVER["REQUEST_METHOD"] == "GET") { 
+        if (!empty($_GET['full_name']) && $_GET['full_name'] != $_SESSION['name']) {
+            $full_name = filter_var($_GET['full_name'], FILTER_SANITIZE_STRING);
+            $query = "UPDATE user SET name=? WHERE id=?";
+            $stmt = $connection->prepare($query);
+            $stmt->execute([$full_name, $_SESSION['login_user']]);
+        } else if (!empty($_GET['user_name']) && $_GET['user_name'] != $_SESSION['user_name']) {
+            $user_name = filter_var($_GET['user_name'], FILTER_SANITIZE_STRING);
+            $query = "UPDATE user SET user_name=? WHERE id=?";
+            $stmt = $connection->prepare($query);
+            $stmt->execute([$user_name, $_SESSION['login_user']]);
+        } else if (!empty($_GET['contact']) && $_GET['contact'] != $_SESSION['contact']) {
+            $contact = $_GET['contact'];
+            $query = "UPDATE user SET contact_no=? WHERE id=?";
+            $stmt = $connection->prepare($query);
+            $stmt->execute([$contact, $_SESSION['login_user']]);
+        } else if (!empty($_GET['email']) && $_GET['email'] != $_SESSION['email_id']) {
+            $email = $_GET['email'];
+            if (filter_var($email, FILTER_VALIDATE_EMAIL) === FALSE) {
+                throw new Exception("Invalid Email");
+            }
+            $query = "UPDATE user SET email_id=? WHERE id=?";
+            $stmt = $connection->prepare($query);
+            $stmt->execute([$email, $_SESSION['login_user']]);
+        } else if (!empty($_GET['password'])) {
+            $password = $_GET['password'];
+            $query = "UPDATE user SET password=? WHERE id=?";
+            $stmt = $connection->prepare($query);
+            $stmt->execute([$password, $_SESSION['login_user']]);
+        } else if (!empty($_GET['dp_url']) && $_GET['dp_url'] != $_SESSION['dp_url']) {
+            $dp_url = $_GET['dp_url'];
+            $imgExts = array("gif", "jpg", "jpeg", "png", "tiff", "tif");
+            $urlExt = pathinfo($dp_url, PATHINFO_EXTENSION);
+            if (in_array($urlExt, $imgExts)) {
+                $query = "UPDATE user SET img_url=? WHERE id=?";
+                $stmt = $connection->prepare($query);
+                $stmt->execute([$dp_url, $_SESSION['login_user']]);
+            } else {
+                echo "<script>alert('URL is not of an image.')</script>";
+            }
+        }
+        $_SESSION['name'] = $_GET['full_name'] ?? $_SESSION['name'];
+        $_SESSION['user_name'] = $_GET['user_name'] ?? $_SESSION['user_name'];
+        $_SESSION['email_id'] = $_GET['email'] ?? $_SESSION['email_id'];
+        $_SESSION['contact'] = $_GET['contact'] ?? $_SESSION['contact'];
+        $_SESSION['dp_url'] = $_GET['dp_url'] ?? $_SESSION['dp_url'];
+    }
+?>
 ?>	
 
 <!doctype html>
