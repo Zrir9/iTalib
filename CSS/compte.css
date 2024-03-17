@@ -1,0 +1,200 @@
+.cd-main-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.profile-container {
+    font-family: 'Helvetica', sans-serif;
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px;
+}
+
+.profile-container > div {
+    border: 1px solid #ccc; /* Light gray border */
+    margin-bottom: 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.profile-image {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-top: -50px; /* Adjusted to align with the new image size */
+    border: 3px solid white;
+    box-shadow: 1px 2px 3px rgba(100, 100, 100, 0.5);
+}
+
+img#pro-timeline {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+div.pro-title {
+    text-align: center;
+    padding: 20px;
+}
+
+p#pro-name {
+    margin: 0;
+    padding: 5px;
+    font-size: 24px; /* Reduced size */
+    color: #000; /* Black text */
+}
+
+span.pro-detail {
+    font-size: 14px; /* Reduced size */
+    opacity: 0.8;
+}
+
+.pro-education h1, .pro-skill h1, .pro-interest h1, .pro-job h1 {
+    font-family: 'Ropa Sans', sans-serif;
+    color: #000; /* Black text */
+    background-color: #fff; /* White background */
+    padding: 10px 20px;
+    margin: 0;
+    font-size: 18px; /* Reduced size for titles */
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+button.add-button, button.edit-button {
+    border: 1px solid #000; /* Black border */
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    padding: 5px 10px;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 14px; /* Adjusted font size for better alignment */
+}
+
+button.add-button:hover {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    cursor: pointer;
+}
+
+.pro-body {
+    padding: 20px;
+}
+
+.pro-body input, .pro-body select {
+    width: 90%;
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #000; /* Black text */
+    background-color: #fff; /* White background */
+}
+
+.pro-body ul li {
+    background-color: #F5F5F5; /* Light gray background */
+    border: 1px solid #EBEBEB; /* Very light gray border */
+    border-left: 3px solid #000; /* Black border for left side */
+    padding: 10px;
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        width: 95%;
+    }
+    .profile-image {
+        height: 80px;
+        width: 80px; /* Adjusted for responsiveness */
+    }
+}
+
+/* Adjusted .cd-side-nav styling for black and white theme with borders and grey background */
+.cd-side-nav {
+
+    border-right: 1px solid #ccc; /* Light gray border */
+}
+
+.cd-side-nav a, .cd-side-nav .cd-label {
+    font-size: 14px;
+    color: #000; /* Black text */
+    border-bottom: 1px solid #ccc; /* Light gray border for separation */
+}
+
+.cd-side-nav > ul > li > a::before {
+    background: url(../images/cd-nav-icons.svg) no-repeat 0 0;
+}
+
+.cd-side-nav .cd-label {
+
+    border-bottom: 1px solid #bbb; /* Darker gray border */
+}
+
+  
+  /* -------------------------------- 
+  Sidebar
+  -------------------------------- */
+  .cd-side-nav {
+    
+    border-right: 1px solid #ccc; /* Light grey border on the right */
+    position: absolute; /* Fix sidebar to the viewport */
+    top: 0; /* Align top to the viewport top */
+    left: 0; /* Align left to the viewport left */
+    width: 200px; /* Sidebar width */
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto; /* Enable vertical scroll if content overflows */
+    z-index: 1000; /* Ensure sidebar is above other content */
+    transition: transform 0.3s ease; /* Smooth transition for sidebar movements */
+  }
+  
+  .cd-side-nav > ul {
+    padding: 0.6em 0;
+  }
+  
+  .cd-side-nav > ul:last-of-type {
+    padding-bottom: 0;
+  }
+  
+  .cd-side-nav .cd-label, .cd-side-nav a {
+    display: block;
+    padding: 1em 5%;
+    color: #3e454c; /* Dark text for better contrast */
+    border-bottom: 1px solid #ccc; /* Light grey border for separation */
+  }
+  
+  .cd-side-nav .cd-label {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  
+  /* Apply additional custom styles as needed */
+  
+  @media only screen and (min-width: 768px) {
+    .cd-side-nav {
+      position: static; /* Sidebar becomes part of the flow on larger screens */
+      height: auto;
+      width: 100%;
+      max-width: 250px; /* Adjust max-width as per design requirements */
+    }
+  
+    
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  .content-wrapper {
+    display: flex;
+
+  } 
+  .jobs-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.jobs-table th, .jobs-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+.jobs-table th {
+    background-color: #f2f2f2;
+    color: black;
+}
