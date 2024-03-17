@@ -5,11 +5,8 @@
    	define('DB_DATABASE', 'studentportal');
    	$dsn = "host:".DB_SERVER."dbname=".DB_DATABASE."";
 	try {
-		$db = new PDO($dsn,DB_USERNAME);
+		$connection = new PDO($dsn,DB_USERNAME);
 	}catch(PDOException $e){
 		$error = $e->getMessage();
 	}
 ?>
-
-
-
