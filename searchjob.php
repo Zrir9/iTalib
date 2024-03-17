@@ -1,17 +1,5 @@
 <?php
-$db_server="localhost";
-$db_user ="root";
-$db_pass="";
-$db_name="recrutement";
-$conn="";
-
-try{
-    $conn= mysqli_connect($db_server,$db_user,$db_pass,$db_name);
-}
-catch( mysqli_sql_exception)
-{
-    echo"error connecting to database";
-}
+include 'config.php'
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -26,21 +14,6 @@ catch( mysqli_sql_exception)
     <link rel="stylesheet" href="stylish.css" type="text/css" media="all">
 	<link href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css 
 	  rel="stylesheet"  type='text/css'>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Secular+One&display=swap" rel="stylesheet">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<script
-	  src="https://code.jquery.com/jquery-3.6.0.js"
-	  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-	  crossorigin="anonymous">
-	 </script>
 
 
 </head>
@@ -60,7 +33,7 @@ catch( mysqli_sql_exception)
 						</a>
 						<nav id = "nav1" class= "nav menu" role = "navigation">
 								<ul>
-									<li><a href="welcomepage.php" >Hme</a></li>
+									<li><a href="#" >Acceuil</a></li>
 									<li><a href="#">Chercher Travail</a></li>
 									<li><a href="#">Chercher Cv</a></li>
 									<li><a href="#">Compte</a></li>
@@ -88,50 +61,39 @@ catch( mysqli_sql_exception)
 			<input class="serchinput" type="text" required="required" name="chercher" placeholder="Chercher?">
 			<input type="submit" value="Chercher" name="submit">
 	</form>
+
+	</div>
 	<div class="centered">
-				<h2>Emboches</h2>			
+						
             <section id = 'cards' class="cards">
-       <!--
-			 <article class="card">
-                    <a href="#">
-             <img src="path-to-company-logo.jpg" alt="Company Logo"> 
-                        
-                        <div class="card-content">
-                            <h2 id = "cardHeader"></h2>
-                            <p id = "cardText"></p>
-                        </div>
-                    </a>					
-                .card -->
-				
-        
-     <div class="llm">
-	 <?php
- 
- if(isset($_POST['submit'])) {
-$chercher =filter_input(INPUT_POST, 'chercher', FILTER_SANITIZE_SPECIAL_CHARS);
-$sql=" SELECT * FROM cv WHERE competences like '%$chercher%' ";
-$result=mysqli_query($conn,$sql);
+    
+			<div class="llm">
+<?php
+if(isset($_POST['submit'])) {
+    $chercher = filter_input(INPUT_POST, 'chercher', FILTER_SANITIZE_SPECIAL_CHARS);
+    $sql = "SELECT * FROM user WHERE user_type LIKE '%$chercher%' ";
+    $result = mysqli_query($conn, $sql);
 
-  
-	if(mysqli_num_rows($result)>0){
-	 
-	  while( $row = mysqli_fetch_assoc($result))
-	  { 
-		echo "<button class='result'>" . $row["name"] ."<br>".$row["id"]."<br>".$row["competences"]. "</button>";  
-	    
-  }
-  }
-  else{
-	echo "<div class='noresult'>0 result found here</div>";
-  }
+    if(mysqli_num_rows($result) > 0) {
+        while($row = mysqli_fetch_assoc($result)) {
+            $profileId = $row['id']; // Assuming 'id' is the column name for the profile ID
+            echo "<a class='result' href='profile.php?id=$profileId'>";
+            echo "<div class='namebig'>" . $row["name"] . "</div><br>" . $row["user_type"];
+            echo "</a>";
+        }
+    } else {
+        echo "<div class='noresult'>0</div>";
+    }
 
-mysqli_close($conn);
- }
+    mysqli_close($conn);
+}
 ?>
+
+
 <style>
 
 	/* Style for the search result container */
-	.llm {
+.llm {
     margin-top: 20px;
 	display: flex;
 	flex-direction: column;
@@ -142,7 +104,11 @@ mysqli_close($conn);
 	margin-right:20px ;
 	margin-left: 20px;
 }
-
+.namebig
+{
+	color: red;
+	font-size: 60px;
+}
 /* Style for each individual search result */
 .llm .result {
     background-color: #f5f5f5;
@@ -176,12 +142,13 @@ mysqli_close($conn);
 	
 }
 </style>
-	 </div>
+
+
+</div>
 	
-		</div>
 
 <div class="filters-options">
-		<div class="filters-body">
+		<!-- <div class="filters-body"> -->
 			<ul class="filters">
 			<h5>Date de publication</h5>
 				<li>
@@ -485,14 +452,15 @@ mysqli_close($conn);
 			
 			</ul>
 </div>
-	
+
 </div>
 </section><!-- .cards -->
         </div><!-- .centered -->
+
+
+
+
 </div>
-
-
-
 
 
 
